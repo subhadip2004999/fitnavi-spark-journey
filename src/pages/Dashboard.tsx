@@ -21,6 +21,15 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("home");
 
+  // Function to handle navigation
+  const handleNavigation = (tab: string) => {
+    if (tab === "home") {
+      setActiveTab(tab);
+    } else {
+      navigate(`/${tab}`);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -185,7 +194,7 @@ const Dashboard = () => {
                     <span className="font-medium">Protein</span>
                     <span className="text-gray-600">80g / 100g</span>
                   </div>
-                  <Progress value={80} className="h-2 bg-gray-200" indicatorClassName="bg-red-500" />
+                  <Progress value={80} className="h-2 bg-gray-200" />
                 </div>
                 
                 <div>
@@ -193,7 +202,7 @@ const Dashboard = () => {
                     <span className="font-medium">Carbs</span>
                     <span className="text-gray-600">130g / 200g</span>
                   </div>
-                  <Progress value={65} className="h-2 bg-gray-200" indicatorClassName="bg-yellow-500" />
+                  <Progress value={65} className="h-2 bg-gray-200" />
                 </div>
                 
                 <div>
@@ -201,7 +210,7 @@ const Dashboard = () => {
                     <span className="font-medium">Fats</span>
                     <span className="text-gray-600">30g / 67g</span>
                   </div>
-                  <Progress value={45} className="h-2 bg-gray-200" indicatorClassName="bg-green-500" />
+                  <Progress value={45} className="h-2 bg-gray-200" />
                 </div>
               </div>
             </CardContent>
@@ -213,7 +222,7 @@ const Dashboard = () => {
       <nav className="fixed bottom-0 left-0 right-0 bg-white shadow-lg rounded-t-xl max-w-lg mx-auto">
         <div className="flex justify-between px-6 py-3">
           <button 
-            onClick={() => setActiveTab("home")}
+            onClick={() => handleNavigation("home")}
             className={`flex flex-col items-center ${
               activeTab === "home" ? "text-blue-600" : "text-gray-600"
             }`}
@@ -223,7 +232,7 @@ const Dashboard = () => {
           </button>
           
           <button 
-            onClick={() => setActiveTab("workouts")}
+            onClick={() => handleNavigation("workouts")}
             className={`flex flex-col items-center ${
               activeTab === "workouts" ? "text-blue-600" : "text-gray-600"
             }`}
@@ -233,7 +242,7 @@ const Dashboard = () => {
           </button>
           
           <button 
-            onClick={() => setActiveTab("nutrition")}
+            onClick={() => handleNavigation("nutrition")}
             className={`flex flex-col items-center ${
               activeTab === "nutrition" ? "text-blue-600" : "text-gray-600"
             }`}
@@ -243,7 +252,7 @@ const Dashboard = () => {
           </button>
           
           <button 
-            onClick={() => setActiveTab("progress")}
+            onClick={() => handleNavigation("progress")}
             className={`flex flex-col items-center ${
               activeTab === "progress" ? "text-blue-600" : "text-gray-600"
             }`}
@@ -253,7 +262,7 @@ const Dashboard = () => {
           </button>
           
           <button 
-            onClick={() => setActiveTab("profile")}
+            onClick={() => handleNavigation("profile")}
             className={`flex flex-col items-center ${
               activeTab === "profile" ? "text-blue-600" : "text-gray-600"
             }`}
