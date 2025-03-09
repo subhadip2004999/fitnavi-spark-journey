@@ -1,18 +1,193 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>fitnavi-spark-journey</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-    <meta property="og:image" content="/og-image.png" />
-  </head>
-
-  <body>
-    <div id="root"></div>
+    <title>Your Fitness Coach Subhadip</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Welcome Screen -->
+      <section id="welcome-screen" class="screen active">
+        <div class="welcome-content">
+          <div class="logo-container">
+            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80" alt="Logo" class="logo-image" />
+          </div>
+          <h1>Your Fitness Coach<br /><span>Subhadip</span></h1>
+          <p>Transform your body, transform your life</p>
+          <button id="get-started-btn" class="primary-btn pulse">Get Started</button>
+        </div>
+      </section>
+
+      <!-- Login Screen -->
+      <section id="login-screen" class="screen">
+        <div class="login-container">
+          <h2>Welcome Back</h2>
+          <form id="login-form">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Enter your email" required />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" placeholder="Enter your password" required />
+            </div>
+            <button type="submit" class="primary-btn">Login</button>
+          </form>
+          <div class="auth-options">
+            <p>Don't have an account? <a href="#" id="signup-link">Sign Up</a></p>
+            <p><a href="#" id="forgot-password">Forgot Password?</a></p>
+          </div>
+          <div class="social-login">
+            <p>Or login with</p>
+            <div class="social-icons">
+              <button class="social-btn google"><i class="fab fa-google"></i> Google</button>
+              <button class="social-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dashboard Screen -->
+      <section id="dashboard-screen" class="screen">
+        <header class="app-header">
+          <div class="user-greeting">
+            <h2>Hi, James!</h2>
+            <p>Ready for today's workout?</p>
+          </div>
+          <div class="profile-pic">
+            <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80" alt="Profile" />
+          </div>
+        </header>
+
+        <div class="stats-container">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-fire"></i></div>
+            <div class="stat-info">
+              <h3>745</h3>
+              <p>Calories</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-stopwatch"></i></div>
+            <div class="stat-info">
+              <h3>43</h3>
+              <p>Minutes</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-dumbbell"></i></div>
+            <div class="stat-info">
+              <h3>12</h3>
+              <p>Exercises</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">
+          <h2>Today's Plan</h2>
+          <a href="#" class="view-all">View All</a>
+        </div>
+
+        <div class="workout-plan">
+          <div class="workout-card">
+            <div class="workout-image">
+              <img src="https://images.unsplash.com/photo-1577221084712-45b0445d2b00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80" alt="Upper Body" />
+            </div>
+            <div class="workout-info">
+              <h3>Upper Body Strength</h3>
+              <p><i class="fas fa-clock"></i> 45 mins · <i class="fas fa-bolt"></i> Intermediate</p>
+              <button class="start-btn">Start</button>
+            </div>
+          </div>
+
+          <div class="workout-card">
+            <div class="workout-image">
+              <img src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80" alt="Cardio" />
+            </div>
+            <div class="workout-info">
+              <h3>HIIT Cardio</h3>
+              <p><i class="fas fa-clock"></i> 30 mins · <i class="fas fa-bolt"></i> Advanced</p>
+              <button class="start-btn">Start</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">
+          <h2>Nutrition</h2>
+          <a href="#" class="view-all">Track Meals</a>
+        </div>
+
+        <div class="nutrition-tracker">
+          <div class="nutrition-progress">
+            <div class="progress-circle">
+              <svg width="120" height="120" viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="54" fill="none" stroke="#e6e6e6" stroke-width="12" />
+                <circle class="progress" cx="60" cy="60" r="54" fill="none" stroke="#4CAF50" stroke-width="12" stroke-dasharray="339.3" stroke-dashoffset="101.8" />
+                <text x="60" y="60" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="bold">70%</text>
+              </svg>
+            </div>
+            <div class="calories-info">
+              <h3>1,400 / 2,000</h3>
+              <p>Calories consumed</p>
+            </div>
+          </div>
+
+          <div class="macros-container">
+            <div class="macro-item">
+              <div class="macro-label">Protein</div>
+              <div class="macro-bar">
+                <div class="macro-progress protein" style="width: 80%"></div>
+              </div>
+              <div class="macro-value">80g / 100g</div>
+            </div>
+            <div class="macro-item">
+              <div class="macro-label">Carbs</div>
+              <div class="macro-bar">
+                <div class="macro-progress carbs" style="width: 65%"></div>
+              </div>
+              <div class="macro-value">130g / 200g</div>
+            </div>
+            <div class="macro-item">
+              <div class="macro-label">Fats</div>
+              <div class="macro-bar">
+                <div class="macro-progress fats" style="width: 45%"></div>
+              </div>
+              <div class="macro-value">30g / 67g</div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="bottom-nav">
+          <a href="#" class="nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="fas fa-dumbbell"></i>
+            <span>Workouts</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="fas fa-utensils"></i>
+            <span>Nutrition</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="fas fa-chart-line"></i>
+            <span>Progress</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+          </a>
+        </nav>
+      </section>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
