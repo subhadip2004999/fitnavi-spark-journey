@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/5f56b8d2-e241-4061-b21a-82d4bbceec2b
+**URL**: https://fitnavi-spark-journey.lovable.app/
 
 ## How can I edit this code?
 
